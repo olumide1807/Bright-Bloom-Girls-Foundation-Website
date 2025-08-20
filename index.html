@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Bloom Girls Foundation | Empowering the Girl Child</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/css/style.css">
+    <link rel="icon" href="images/WhatsApp_Image_2025-08-07_at_16.31.39_c9255aa1-removebg-preview.png" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <style>
+        .story-modal-content {
+            max-width: 700px;
+            max-height: 90vh;
+            overflow-y: auto;
+            text-align: justify;
+        }
+
+        .story-modal-header {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            align-items: center;
+        }
+
+        .story-modal-header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+        }
+
+        .story-modal-info h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .story-modal-meta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .story-modal-meta span:first-child {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .story-modal-meta span:last-child {
+            color: #666;
+            font-weight: 500;
+        }
+
+        .story-modal-body {
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .story-modal-body p {
+            margin-bottom: 1.5rem;
+        }
+
+        .story-modal-body h4 {
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            font-size: 1.2rem;
+        }
+
+        .story-quote {
+            background: #f8f9fa;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: #555;
+        }
+
+        .story-image-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .story-content-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-caption,
+        .video-caption {
+            font-style: italic;
+            color: #666;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .story-video-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .story-video {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .story-modal-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .story-modal-header img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .story-modal-content {
+                width: 95%;
+                max-height: 95vh;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/WhatsApp_Image_2025-08-07_at_16.31.39_c9255aa1-removebg-preview.png"
+                    alt="bright-bloom-girls-foundation-logo" width="50" height="50">
+                <span class="logo-full">Bright Bloom Girls Foundation</span>
+                <span class="logo-abbr">BBG Foundation</span>
+            </div>
+
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#focus">Focus Areas</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="donate-btn">Donate Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="motto">Empowering the Girl-Child, Transforming Futures</div>
+            <h1>Building a Safe & Inclusive Community Through Girl-Child Empowerment</h1>
+            <!-- <p>We provide support, formal education, vocational training, and advocacy to help young girls break the
+                cycle of poverty and become catalysts for social change.</p> -->
+            <div class="hero-btns">
+                <a href="" class="btn btn-primary donate-btn">Donate Now</a>
+                <a href="#focus" class="btn btn-secondary">Our Programs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="section-title">
+            <h2>About Our Foundation</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Building a Brighter Future for Girls in Nigeria</h3>
+                <p>Bright Bloom Girls Foundation is dedicated to creating a safe, inclusive, and empowering community
+                    where every girl-child can thrive through education, skills development, and advocacy.</p>
+                <p>Our work focuses on eradicating poverty through girl-child education and empowerment, providing
+                    comprehensive support to out-of-school teenage girls across Nigeria.</p>
+                <p>We believe that when you educate and empower a girl, you transform not just her life, but her family,
+                    community, and ultimately, the nation.</p>
+                <a href="#focus" class="btn btn-primary">Our Focus Areas</a>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1655720359248-eeace8c709c5?q=80&w=925&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Nigerian school girls">
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission/Vision Section -->
+    <section class="mission-vision">
+        <div class="section">
+            <div class="section-title">
+                <h2 style="color: white;">Our Vision & Mission</h2>
+            </div>
+            <div class="mv-container">
+                <div class="mv-box">
+                    <h3>Our Vision</h3>
+                    <p>A world where every girl-child is educated, empowered, and equipped to break the cycle of poverty
+                        and become a catalyst for social change.</p>
+                </div>
+                <div class="mv-box">
+                    <h3>Our Mission</h3>
+                    <p>To support out-of-school teenage girls by providing access to formal education, vocational
+                        training, mentorship, and advocacy. We champion peer education and behavioral change initiatives
+                        to prevent teenage pregnancy and promote holistic well-being.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Focus Areas Section -->
+    <section class="section focus-areas" id="focus">
+        <div class="section-title">
+            <h2>Our Focus Areas</h2>
+        </div>
+        <div class="focus-grid">
+            <div class="focus-card">
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                    alt="Education">
+                <div class="focus-card-content">
+                    <h3>Education Access</h3>
+                    <p>Ensuring girls receive formal education opportunities through scholarships, school supplies, and
+                        advocacy for girls' right to education.</p>
+                </div>
+            </div>
+            <div class="focus-card">
+                <img src="https://images.unsplash.com/photo-1573497491208-6da53e5105b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                    alt="Vocational Training">
+                <div class="focus-card-content">
+                    <h3>Vocational Training</h3>
+                    <p>Equipping girls with practical skills in tailoring, catering, computer skills and other trades
+                        for economic independence.</p>
+                </div>
+            </div>
+            <div class="focus-card">
+                <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                    alt="Health Advocacy">
+                <div class="focus-card-content">
+                    <h3>Health Advocacy</h3>
+                    <p>Promoting holistic health, hygiene, and reproductive rights through education and access to
+                        healthcare services.</p>
+                </div>
+            </div>
+            <div class="focus-card">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                    alt="Mentorship">
+                <div class="focus-card-content">
+                    <h3>Mentorship</h3>
+                    <p>Nurturing young girls to become confident leaders and role models through one-on-one and group
+                        mentorship programs.</p>
+                </div>
+            </div>
+            <div class="focus-card">
+                <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                    alt="Teen Pregnancy Prevention">
+                <div class="focus-card-content">
+                    <h3>Pregnancy Prevention</h3>
+                    <p>Advocacy and peer education on reproductive health and responsible choices to reduce teenage
+                        pregnancy rates.</p>
+                </div>
+            </div>
+            <div class="focus-card">
+                <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                    alt="Counseling">
+                <div class="focus-card-content">
+                    <h3>Counseling Support</h3>
+                    <p>Providing guidance and emotional support for at-risk girls to help them navigate challenges and
+                        make positive life choices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Participants Section -->
+    <section class="section participants" id="participants">
+        <div class="section-title">
+            <h2>Who We Serve</h2>
+        </div>
+        <div class="participants-content">
+            <h3>Girls and Young Women We Support</h3>
+            <p>Our programs are designed for girls and young women between the ages of 12 and 21, particularly
+                out-of-school youth, and those from disadvantaged backgrounds or vulnerable situations across Nigeria.
+            </p>
+            <p>We believe in treating every participant with dignity and respect, recognizing them as active partners in
+                their own empowerment journey.</p>
+            <a href="" class="btn btn-primary volunteer-btn">Join Our Program</a>
+        </div>
+    </section>
+
+    <!-- Success Stories Section -->
+    <section class="section success-stories" id="stories">
+        <div class="section-title">
+            <h2>Success Stories</h2>
+            <p>Real stories of transformation and empowerment from our beneficiaries</p>
+        </div>
+        <div class="stories-grid">
+            <div class="">
+                <!-- <div class="story-image">
+                    <img src="images/bbgfgirls.jpg" alt="Aisha's Story">
+                </div>
+                <div class="story-content">
+                    <h3>Aisha's Journey to Success</h3>
+                    <p class="story-excerpt">From a school dropout at 14 to owning her own tailoring business at 19,
+                        Aisha's story shows the power of second chances...</p>
+                    <div class="story-meta">
+                        <span class="story-category">2025</span>
+                    </div>
+                    <div>
+                        <a href="" class="btn btn-primary open-modal-btn">Read More</a>
+                    </div>
+                </div> -->
+            </div>
+
+            <div class="story-card">
+                <div class="story-image">
+                    <img src="images/bbgfgirls.jpg" alt="bbgfgirls">
+                </div>
+                <div class="story-content">
+                    <h3>Bright Bloom Girls Foundation Gives Hope to Two Young Stars in Makoko, Lagos</h3>
+                    <p class="story-excerpt">These two bright young learners were on the brink of missing out on their
+                        education because their parents could not afford school uniforms or pay their tuition fees. For
+                        them, the dream of sitting in a classroom, learning, and building a better future seemed to be
+                        slipping away.
+                    </p>
+                    <div class="story-meta">
+                        <span class="story-category">2025</span>
+                    </div>
+                    <div>
+                        <a href="" class="btn btn-primary open-modal-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="">
+                <!-- <div class="story-image">
+                    <img src="images/bbgfgirls.jpg" alt="Aisha's Story">
+                </div>
+                <div class="story-content">
+                    <h3>Aisha's Journey to Success</h3>
+                    <p class="story-excerpt">From a school dropout at 14 to owning her own tailoring business at 19,
+                        Aisha's story shows the power of second chances...</p>
+                    <div class="story-meta">
+                        <span class="story-category">2025</span>
+                    </div>
+                    <div>
+                        <a href="" class="btn btn-primary open-modal-btn">Read More</a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats" id="impact">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">5,000+</div>
+                <div class="stat-title">Girls Educated</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-title">Communities Reached</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">90%</div>
+                <div class="stat-title">School Retention</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1,200+</div>
+                <div class="stat-title">Vocational Graduates</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery" id="gallery">
+        <div class="section-title">
+            <h2>Gallery</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/bbgfgirls.jpg" alt="Bright Bloom Girls Foundation Gallery">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                    alt="Graduation">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                    alt="Workshop">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                    alt="Mentorship">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="donate">
+        <div class="hero-content">
+            <h2>Your Support Can Change Lives</h2>
+            <p>Every contribution helps us provide education, vocational training, and empowerment opportunities to
+                girls in need across Nigeria. Join our mission to create a world where every girl can bloom.</p>
+            <div class="hero-btns">
+                <a href="" class="btn btn-primary donate-btn">Donate Now</a>
+                <a href="" class="btn btn-secondary volunteer-btn">Become a Volunteer</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Bright Bloom Girls Foundation</h3>
+                <p>Empowering the Girl-Child, Transforming Futures</p>
+                <p>Building a safe, inclusive, and empowering community where every girl-child can thrive.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/bbgfoundationng"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/brightbloomgirlsfoundation/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/bright-bloom-girls-foundation-6120b1374/"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <!-- <a href="#"><i class="fab fa-youtube"></i></a> -->
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#focus">Focus Areas</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#donate">Donate</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> No 4, Alonge Street, Akoka, Lagos, Nigeria</p>
+                <p><i class="fas fa-phone"></i> +234 704 585 7095, <br>+234 708 994 1644</p>
+                <p><i class="fas fa-envelope"></i> info@brightbloomgirlsfoundation.org.ng</p>
+            </div>
+            <div class="footer-col">
+                <h3>Find us on Map</h3>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.962268130715!2d3.381258775040246!3d6.526449693466177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8d0185beabdb%3A0xcb0f83b88ac90b13!2s4%20Alonge%20St%2C%20Akoka%2C%20Lagos%20102216%2C%20Lagos%2C%20Nigeria!5e0!3m2!1sen!2sgh!4v1751544066024!5m2!1sen!2sgh"
+                    width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bright Bloom Girls Foundation. All Rights Reserved. | Designed with <i class="fas fa-heart"
+                    style="color: var(--primary);"></i> for the Girl Child by <a href="https://wa.link/joz55a"
+                    target="_blank" rel="noopener noreferrer">Basitech Solutions</a></p>
+        </div>
+    </footer>
+
+    <!-- Donation Modal -->
+    <div class="modal-overlay" id="donationModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Support Our Cause</h3>
+            <div class="bank-details">
+                <p><strong>Bank Name:</strong> First Bank Nigeria</p>
+                <p><strong>Account Name:</strong> Bright Bloom Girls Foundation</p>
+                <p><strong>Account Number:</strong> 2047235625</p>
+            </div>
+            <div class="appreciation-message" style="display: none;">
+                <p>Thank you for your generous support! Your donation will help empower young girls through education
+                    and skills development.</p>
+            </div>
+            <button class="btn btn-primary confirm-donation">I've Made My Donation</button>
+        </div>
+    </div>
+
+    <!-- Volunteer Modal -->
+    <div class="modal-overlay" id="volunteerModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Join Our Volunteer Team</h3>
+            <form id="volunteerForm">
+                <!-- Personal Information -->
+                <div class="form-group">
+                    <input type="text" id="volunteerName" placeholder="Full Name" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" id="volunteerEmail" placeholder="Email Address" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="tel" id="volunteerPhone" placeholder="Phone Number" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="volunteerAddress" placeholder="Home Address" required>
+                </div>
+
+                <!-- Age Verification -->
+                <div class="form-group age-verification">
+                    <label>Are you above 18 years?</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="over18" value="Yes" required> Yes
+                        </label>
+                        <label>
+                            <input type="radio" name="over18" value="No"> No
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Education & Profession -->
+                <div class="form-group">
+                    <select id="volunteerEducation" required>
+                        <option value="" disabled selected>Select Education Qualification</option>
+                        <option value="Secondary School">Secondary School</option>
+                        <option value="OND/NCE">OND/NCE</option>
+                        <option value="HND/BSc">HND/BSc</option>
+                        <option value="MSc/PhD">MSc/PhD</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="volunteerProfession" placeholder="Current Profession" required>
+                </div>
+
+                <!-- Personal Message -->
+                <div class="form-group">
+                    <textarea id="volunteerMessage"
+                        placeholder="Why do you want to volunteer with us? (Skills, interests, availability)" rows="4"
+                        required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="storyModal">
+        <div class="modal-content story-modal-content">
+            <span class="close-modal">&times;</span>
+
+            <div class="story-modal-header">
+                <img src="images/bbgfgirls.jpg" alt="bbgfgirls">
+                <div class="story-modal-info">
+                    <h2>Bright Bloom Girls Foundation Gives Hope to Two Young Stars in Makoko, Lagos</h2>
+                    <div class="story-meta">
+                        <span class="story-category">2025</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="story-modal-body">
+                <p>At Bright Bloom Girls Foundation, we believe that every child deserves the chance to shine,
+                    regardless of their background or circumstances. Recently, our team had the privilege of making a
+                    difference in the lives of two remarkable children from Makoko, Lagos, a community known for its
+                    resilience but often faced with economic challenges.
+                </p>
+
+                <h4>The Challenge</h4>
+                <p>These two bright young learners were on the brink of missing out on their education because their
+                    parents could not afford school uniforms or pay their tuition fees. For them, the dream of sitting
+                    in a classroom, learning, and building a better future seemed to be slipping away.
+                </p>
+
+                <div class="story-image-container">
+                    <img src="images/bbgfgirls.jpg" alt="Young girl studying" class="story-content-image">
+                    <p class="image-caption">The two bright young learners.</p>
+                </div>
+
+                <h4>The Turning Point</h4>
+                <p>When we heard their story, we knew we had to step in. Through the support of our donors and the
+                    dedication of our team, we provided them with brand-new school uniforms, a symbols of pride,
+                    belonging, and a fresh start. But we didn't stop there. Bright Bloom Girls Foundation has committed
+                    to paying
+                    their tuition starting next term, ensuring they can stay in school and continue their journey toward
+                    a brighter future.
+                </p>
+
+                <div class="story-video-container">
+                    <video controls class="story-video" poster="images/bbgfgirls.jpg">
+                        <source src="images/bbgf-video.mp4" type="video/mp4">
+                        <!-- <p>Your browser doesn't support HTML video. Here is a <a href="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4">link to the video</a> instead.</p> -->
+                    </video>
+                    <p class="video-caption">The kids were giving appreciation.</p>
+                </div>
+
+                <h4>The Impact</h4>
+                <p>This is more than just financial support, it's about giving these children the confidence to dream
+                    again, the opportunity to learn, and the hope that they are not alone in their journey.
+                </p>
+
+                <p>At Bright Bloom Girls Foundation, every act of kindness is a seed planted for a future filled with
+                    possibility. These two children now have the chance to bloom, and we can't wait to see the amazing
+                    things they will achieve.
+                </p>
+
+                <div class="story-quote">
+                    "Together, we can transform lives—one child at a time."
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="style/js/js.js"></script>
+</body>
+
+</html>
