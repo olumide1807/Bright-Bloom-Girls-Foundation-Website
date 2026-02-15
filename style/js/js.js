@@ -200,3 +200,67 @@ document.addEventListener('click', function(e) {
         document.body.style.overflow = 'auto';
     }
 });
+
+// Gallery Modal Functionality
+const galleryModal = document.getElementById('galleryModal');
+const galleryModalTitle = document.getElementById('galleryModalTitle');
+const galleryModalGrid = document.getElementById('galleryModalGrid');
+const galleryItems = document.querySelectorAll('.gallery-item'); // This gets ALL items (visible and hidden)
+const visibleGalleryItems = document.querySelectorAll('.gallery-item.visible-item'); // Only visible items
+
+// Function to open gallery modal with filtered images
+function openGalleryModal(tag) {
+    // Filter ALL images by tag (including hidden ones)
+    const filteredItems = Array.from(galleryItems).filter(item => 
+        item.dataset.tag === tag
+    );
+    
+    // Clear previous content
+    galleryModalGrid.innerHTML = '';
+    
+    // Set modal title
+    galleryModalTitle.textContent = `${tag} Gallery`;
+    
+    // Add ALL filtered images to modal (visible + hidden)
+    filteredItems.forEach(item => {
+        const img = item.querySelector('img');
+        const description = item.dataset.description;
+        
+        const modalItem = document.createElement('div');
+        modalItem.className = 'gallery-modal-item';
+        modalItem.innerHTML = `
+            <img src="${img.src}" alt="${img.alt}">
+            <div class="gallery-modal-item-caption">${description}</div>
+        `;
+        
+        galleryModalGrid.appendChild(modalItem);
+    });
+    
+    // Show modal
+    galleryModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+// Function to close gallery modal
+function closeGalleryModal() {
+    galleryModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Add click event ONLY to visible gallery items
+visibleGalleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const tag = item.dataset.tag;
+        openGalleryModal(tag);
+    });
+});
+
+// Close gallery modal when X is clicked
+galleryModal.querySelector('.close-modal').addEventListener('click', closeGalleryModal);
+
+// Close gallery modal when clicking outside
+galleryModal.addEventListener('click', (e) => {
+    if (e.target === galleryModal) {
+        closeGalleryModal();
+    }
+});
