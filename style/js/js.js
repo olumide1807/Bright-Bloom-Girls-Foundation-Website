@@ -178,7 +178,7 @@ volunteerModal.addEventListener('click', (e) => {
 const storyModal = document.getElementById('storyModal');
 
 // Use event delegation instead of forEach
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
     // Open story modal when "Read More" button is clicked
     if (e.target.classList.contains('open-modal-btn')) {
         e.preventDefault();
@@ -187,13 +187,13 @@ document.addEventListener('click', function(e) {
             document.body.style.overflow = 'hidden';
         }
     }
-    
+
     // Close story modal when close button is clicked
     if (e.target.classList.contains('close-modal') && e.target.closest('#storyModal')) {
         storyModal.style.display = 'none';
         document.body.style.overflow = 'auto';
     }
-    
+
     // Close modal when clicking outside
     if (e.target === storyModal) {
         storyModal.style.display = 'none';
@@ -205,38 +205,50 @@ document.addEventListener('click', function(e) {
 const galleryModal = document.getElementById('galleryModal');
 const galleryModalTitle = document.getElementById('galleryModalTitle');
 const galleryModalGrid = document.getElementById('galleryModalGrid');
-const galleryItems = document.querySelectorAll('.gallery-item'); // This gets ALL items (visible and hidden)
-const visibleGalleryItems = document.querySelectorAll('.gallery-item.visible-item'); // Only visible items
+const galleryItems = document.querySelectorAll('.gallery-item');
+const visibleGalleryItems = document.querySelectorAll('.gallery-item.visible-item');
+
+// Video Modal Elements
+const videoModal = document.getElementById('videoModal');
+const videoModalPlayer = document.getElementById('videoModalPlayer');
+const videoModalTitle = document.getElementById('videoModalTitle');
+const videoModalDescription = document.getElementById('videoModalDescription');
 
 // Function to open gallery modal with filtered images
 function openGalleryModal(tag) {
-    // Filter ALL images by tag (including hidden ones)
-    const filteredItems = Array.from(galleryItems).filter(item => 
-        item.dataset.tag === tag
+    const filteredItems = Array.from(galleryItems).filter(item =>
+        item.dataset.tag === tag && item.querySelector('img')
     );
-    
-    // Clear previous content
+
     galleryModalGrid.innerHTML = '';
-    
-    // Set modal title
     galleryModalTitle.textContent = `${tag} Gallery`;
-    
-    // Add ALL filtered images to modal (visible + hidden)
+
     filteredItems.forEach(item => {
         const img = item.querySelector('img');
+        const video = item.querySelector('video');
         const description = item.dataset.description;
-        
+
+        // Skip items that have no visible image (commented out or missing)
+        if (!img && !video) return;
+
         const modalItem = document.createElement('div');
         modalItem.className = 'gallery-modal-item';
-        modalItem.innerHTML = `
+
+        if (img) {
+            modalItem.innerHTML = `
             <img src="${img.src}" alt="${img.alt}">
             <div class="gallery-modal-item-caption">${description}</div>
         `;
-        
+        } else if (video) {
+            modalItem.innerHTML = `
+            <video src="${video.src}" controls style="width:100%;"></video>
+            <div class="gallery-modal-item-caption">${description}</div>
+        `;
+        }
+
         galleryModalGrid.appendChild(modalItem);
     });
-    
-    // Show modal
+
     galleryModal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
 }
@@ -247,20 +259,49 @@ function closeGalleryModal() {
     document.body.style.overflow = 'auto';
 }
 
-// Add click event ONLY to visible gallery items
+// Function to open video modal
+function openVideoModal(src, title, description) {
+    videoModalPlayer.src = src;
+    videoModalTitle.textContent = title || 'Video';
+    videoModalDescription.textContent = description || '';
+    videoModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+// Function to close video modal
+function closeVideoModal() {
+    videoModalPlayer.pause();
+    videoModalPlayer.src = '';
+    videoModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Click handler for visible gallery items
 visibleGalleryItems.forEach(item => {
     item.addEventListener('click', () => {
-        const tag = item.dataset.tag;
-        openGalleryModal(tag);
+        const video = item.querySelector('video');
+        if (video) {
+            // It's a video item — open video modal
+            openVideoModal(
+                video.src,
+                item.dataset.tag,
+                item.dataset.description
+            );
+        } else {
+            // It's an image item — open gallery modal
+            openGalleryModal(item.dataset.tag);
+        }
     });
 });
 
-// Close gallery modal when X is clicked
+// Close gallery modal
 galleryModal.querySelector('.close-modal').addEventListener('click', closeGalleryModal);
-
-// Close gallery modal when clicking outside
 galleryModal.addEventListener('click', (e) => {
-    if (e.target === galleryModal) {
-        closeGalleryModal();
-    }
+    if (e.target === galleryModal) closeGalleryModal();
+});
+
+// Close video modal
+videoModal.querySelector('.close-modal').addEventListener('click', closeVideoModal);
+videoModal.addEventListener('click', (e) => {
+    if (e.target === videoModal) closeVideoModal();
 });
